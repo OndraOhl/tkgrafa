@@ -86,6 +86,14 @@ class Application(tk.Tk):
 
         tk.Button(self, text="Quit", command=self.quit).pack(anchor='e')
 
+        mainMenu = tk.Menu(self)
+        mainMenu.add_cascade(label='Open', command=self.quit)
+        mainMenu.add_cascade(label='Save', command=self.quit)
+        
+        mainMenu.add_cascade(label='File')
+        mainMenu.add_cascade(label='Edit')
+
+
     def selectFile(self):
         self.fileEntry.value = filedialog.askopenfilename()
 
